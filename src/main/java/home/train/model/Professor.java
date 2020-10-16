@@ -9,7 +9,7 @@ public class Professor extends Person {
 
     private String speciality;
 
-    public Professor(){}
+    public Professor(){super();}
 
     public String getSpeciality() {
         return speciality;

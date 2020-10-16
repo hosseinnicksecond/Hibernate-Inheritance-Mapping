@@ -9,7 +9,7 @@ public class Student extends Person {
 
     private String course;
 
-    public Student(){}
+    public Student(){super(); }
 
     public String getCourse() {
         return course;
