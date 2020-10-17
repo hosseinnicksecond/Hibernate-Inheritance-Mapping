@@ -4,7 +4,9 @@ import home.train.model.Professor;
 import home.train.model.Student;
 import home.train.repository.PersonRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class init implements CommandLineRunner {
 
     private final PersonRepository repository;
@@ -30,6 +32,8 @@ public class init implements CommandLineRunner {
         professor.setSpeciality("programming");
 
         repository.save(professor);
+
+        repository.findAll().forEach(s-> System.out.println(s));
 
     }
 }
