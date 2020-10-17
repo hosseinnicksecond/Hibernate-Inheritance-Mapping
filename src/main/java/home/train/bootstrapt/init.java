@@ -2,17 +2,20 @@ package home.train.bootstrapt;
 
 import home.train.model.Professor;
 import home.train.model.Student;
-import home.train.repository.PersonRepository;
+import home.train.repository.ProfessorRepository;
+import home.train.repository.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class init implements CommandLineRunner {
 
-    private final PersonRepository repository;
+    private final StudentRepository studentRepository;
+    private final ProfessorRepository professorRepository;
 
-    public init(PersonRepository repository) {
-        this.repository = repository;
+    public init(StudentRepository repository, ProfessorRepository professorRepository) {
+        this.studentRepository = repository;
+        this.professorRepository = professorRepository;
     }
 
     @Override
@@ -29,9 +32,10 @@ public class init implements CommandLineRunner {
         professor.setEmail("public@email.com");
         professor.setSpeciality("programming");
 
-        repository.save(student);
-        repository.save(professor);
+//        studentRepository.save(student);
+//        professorRepository.save(professor);
 
-        repository.findAll().forEach(s-> System.out.println(s));
+        System.out.println("**************");
+        studentRepository.findAll().forEach(s-> System.out.println(s));
     }
 }
