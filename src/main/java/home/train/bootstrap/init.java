@@ -4,7 +4,9 @@ import home.train.model.Professor;
 import home.train.model.Student;
 import home.train.repository.PersonRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class init implements CommandLineRunner {
 
     private final PersonRepository repository;
